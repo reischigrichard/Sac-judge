@@ -64,10 +64,12 @@ export default {
 		},
 		badButton() {
 			if (this.result == "bad") {
-				console.log("wp")
+				this.guessMade = true
 			}
 			else{
-				console.log("cock")
+				this.guessMade = true
+				this.correctGuess = "wrong"
+				this.correctColor.color = "#fb3640"
 			}
 		}
 	}
