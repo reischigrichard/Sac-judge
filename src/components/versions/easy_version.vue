@@ -19,33 +19,35 @@
 				<div class="main_content-description-line"></div>
 				<div class="main_content-description-names"><h3>{{playersAndResult}}</h3></div>
 				<div class="main_content-description-place_and_year"><h3>{{event}}</h3></div>
-				<div class="main_content-description-explanation"></div>
-				<div class="main_content-description-continuation"></div>
+				<div v-if="!link == ''" class="main_content-description-link"><a :href="link"><h3>See the whole game!</h3></a></div>
 				<div class="main_content-description-next"></div>
 			</div>
 		</div>
 	</div>
 </template>
+
 <script>
 import {chess_positions} from "./easy_version-objects"
 
-const random_position = Math.floor(Math.random() * 10)
+const random_position = Math.floor(Math.random() * 11)
 export default {
 	data() {
 		return {
 			chess_positions,
 			move: chess_positions[random_position].move,
 			playerColor: chess_positions[random_position].color,
-			sacrificeId: random_position + 1,
+			sacrificeId: chess_positions[random_position].id,
 			result: chess_positions[random_position].result,
 			position: chess_positions[random_position].position,
 			playersAndResult: chess_positions[random_position].playersAndResult,
 			event:chess_positions[random_position].event,
+			link: chess_positions[random_position].link,
 			guessMade: false,
 			correctGuess: "correct",
 			correctColor:{
 				color: "#4aa96c"
-			}
+			},
+			usedPositions:[]
 		}
 	},
 	methods: {
