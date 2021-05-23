@@ -7,7 +7,7 @@
 				sacrifice for {{playerColor.toLowerCase()}} or <span class="main_content-info-bad">not?</span>
 			</h2>
 			</div>
-			<router-link to="/easy/2" class="main_content-next_arrow" ><h2>---> Next</h2></router-link>
+			<router-link v-if="guessMade" to="/easy/2" class="main_content-next_arrow" ><h2>---> Next</h2></router-link>
 			<img :src="getImgUrl(position)" class="main_content-chess_board"/>
 			<div v-if="!guessMade" class="main_content-buttons">
 				<div @click="goodButton" class="main_content-buttons-good judge_button"><p>GOOD</p></div>
@@ -28,12 +28,14 @@
 
 <script>
 import {chess_positions} from "../easy_version-objects"
+import {usedIds} from "./easy_version-position_checker"
 
 const random_position = Math.floor(Math.random() * 11)
 export default {
 	data() {
 		return {
 			chess_positions,
+			usedIds,
 			move: chess_positions[random_position].move,
 			playerColor: chess_positions[random_position].color,
 			sacrificeId: chess_positions[random_position].id,

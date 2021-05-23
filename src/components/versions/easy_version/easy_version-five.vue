@@ -7,7 +7,7 @@
 				sacrifice for {{playerColor.toLowerCase()}} or <span class="main_content-info-bad">not?</span>
 			</h2>
 			</div>
-			<router-link to="/easy/final" class="main_content-next_arrow" ><h2>---> Next</h2></router-link>
+			<router-link v-if="guessMade" to="/easy/final" class="main_content-next_arrow" ><h2>---> See result</h2></router-link>
 			<img :src="getImgUrl(position)" class="main_content-chess_board"/>
 			<div v-if="!guessMade" class="main_content-buttons">
 				<div @click="goodButton" class="main_content-buttons-good judge_button"><p>GOOD</p></div>
@@ -77,7 +77,7 @@ export default {
 	}
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 	
 	.main_content {
 
@@ -164,7 +164,7 @@ export default {
 				opacity: 0.1;
 				position: absolute;
 				top: 40%;
-				right: 15%;
+				right: 10%;
 				font-size: 26px;
 				cursor: pointer;
 				text-decoration: none;
