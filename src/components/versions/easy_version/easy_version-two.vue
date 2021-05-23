@@ -61,22 +61,24 @@ export default {
 			if (this.result == "good") {
 				this.guessMade = true
 				this.usedIds.push(random_position)
-				console.log(this.usedIds)
 			}
 			else{
 				this.guessMade = true
 				this.correctGuess = "wrong"
 				this.correctColor.color = "#fb3640"
+				this.usedIds.push(random_position)
 			}
 		},
 		badButton() {
 			if (this.result == "bad") {
 				this.guessMade = true
+				this.usedIds.push(random_position)
 			}
 			else{
 				this.guessMade = true
 				this.correctGuess = "wrong"
 				this.correctColor.color = "#fb3640"
+				this.usedIds.push(random_position)
 			}
 		}
 	}

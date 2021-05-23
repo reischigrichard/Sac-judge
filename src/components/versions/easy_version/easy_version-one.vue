@@ -19,7 +19,7 @@
 				</div>
 				<div class="main_content-description-line"></div>
 				<div class="main_content-description-names"><h3>{{playersAndResult}}</h3></div>
-				<div class="main_content-description-place_and_year"><h3>{{event}}</h3></div>
+				<div v-if="!link == ''" class="main_content-description-place_and_year"><h3>{{event}}</h3></div>
 				<div v-if="!link == ''" class="main_content-description-link"><a :href="link"><h3>See the whole game!</h3></a></div>
 			</div>
 		</div>
@@ -59,22 +59,24 @@ export default {
 			if (this.result == "good") {
 				this.guessMade = true
 				this.usedIds.push(random_position)
-				console.log(this.usedIds)
 			}
 			else{
 				this.guessMade = true
 				this.correctGuess = "wrong"
 				this.correctColor.color = "#fb3640"
+				this.usedIds.push(random_position)
 			}
 		},
 		badButton() {
 			if (this.result == "bad") {
 				this.guessMade = true
+				this.usedIds.push(random_position)
 			}
 			else{
 				this.guessMade = true
 				this.correctGuess = "wrong"
 				this.correctColor.color = "#fb3640"
+				this.usedIds.push(random_position)
 			}
 		}
 	}
