@@ -19,7 +19,7 @@
                 <h3>Select your difficluty</h3>
             </div>
             <div class="main_part-buttons">
-                <router-link to="/easy" class="main_part-buttons-easy_button button_properties">
+                <router-link to="/easy/1" class="main_part-buttons-easy_button button_properties">
                     <p>EASY</p>
                 </router-link>
                 <router-link to="/medium" class="main_part-buttons-medium_button button_properties">

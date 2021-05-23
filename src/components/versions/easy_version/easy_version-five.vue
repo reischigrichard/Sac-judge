@@ -7,6 +7,7 @@
 				sacrifice for {{playerColor.toLowerCase()}} or <span class="main_content-info-bad">not?</span>
 			</h2>
 			</div>
+			<router-link to="/easy/final" class="main_content-next_arrow" ><h2>---> Next</h2></router-link>
 			<img :src="getImgUrl(position)" class="main_content-chess_board"/>
 			<div v-if="!guessMade" class="main_content-buttons">
 				<div @click="goodButton" class="main_content-buttons-good judge_button"><p>GOOD</p></div>
@@ -20,14 +21,13 @@
 				<div class="main_content-description-names"><h3>{{playersAndResult}}</h3></div>
 				<div class="main_content-description-place_and_year"><h3>{{event}}</h3></div>
 				<div v-if="!link == ''" class="main_content-description-link"><a :href="link"><h3>See the whole game!</h3></a></div>
-				<div class="main_content-description-next"></div>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import {chess_positions} from "./easy_version-objects"
+import {chess_positions} from "../easy_version-objects"
 
 const random_position = Math.floor(Math.random() * 11)
 export default {
@@ -52,7 +52,7 @@ export default {
 	},
 	methods: {
 		getImgUrl(number) {
-    	return require(`../../../static/chess_positions/easy/${number}.png`)
+    	return require(`../../../../static/chess_positions/easy/${number}.png`)
 		},
 		goodButton() {
 			if (this.result == "good") {
@@ -159,6 +159,21 @@ export default {
 				margin: 1% auto;
 			}
 		}
+
+		&-next_arrow{
+				opacity: 0.1;
+				position: absolute;
+				top: 40%;
+				right: 15%;
+				font-size: 26px;
+				cursor: pointer;
+				text-decoration: none;
+
+				&:hover{
+					opacity: 0.3;
+					color: #4aa96c;
+				}
+			}
 
 	}
 
