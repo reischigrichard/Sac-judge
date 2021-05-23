@@ -30,7 +30,7 @@
 import {chess_positions} from "../easy_version-objects"
 import {usedIds} from "./easy_version-position_checker"
 
-const random_position = Math.floor(Math.random() * 11)
+let random_position = Math.floor(Math.random() * 11)
 export default {
 	data() {
 		return {
