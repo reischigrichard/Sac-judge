@@ -28,12 +28,14 @@
 
 <script>
 import {chess_positions} from "../easy_version-objects"
+import {usedIds} from "./easy_version-position_checker"
 
 const random_position = Math.floor(Math.random() * 11)
 export default {
 	data() {
 		return {
 			chess_positions,
+			usedIds,
 			move: chess_positions[random_position].move,
 			playerColor: chess_positions[random_position].color,
 			sacrificeId: chess_positions[random_position].id,
@@ -57,6 +59,8 @@ export default {
 		goodButton() {
 			if (this.result == "good") {
 				this.guessMade = true
+				this.usedIds.push(random_position)
+				console.log(this.usedIds)
 			}
 			else{
 				this.guessMade = true

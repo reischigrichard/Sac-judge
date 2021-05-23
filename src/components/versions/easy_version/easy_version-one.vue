@@ -48,8 +48,7 @@ export default {
 			correctGuess: "correct",
 			correctColor:{
 				color: "#4aa96c"
-			},
-			usedPositions:[]
+			}
 		}
 	},
 	methods: {
@@ -59,6 +58,8 @@ export default {
 		goodButton() {
 			if (this.result == "good") {
 				this.guessMade = true
+				this.usedIds.push(random_position)
+				console.log(this.usedIds)
 			}
 			else{
 				this.guessMade = true
