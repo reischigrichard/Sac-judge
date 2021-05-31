@@ -43,7 +43,7 @@
     </div>
     <div class="bottom_part">
       <div class="bottom_part-credits">
-        <p>© Giant Horse Cock s.r.o. 2021</p>
+        <p>© Reischig Richard 2021</p>
       </div>
     </div>
   </div>

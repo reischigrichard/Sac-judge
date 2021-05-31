@@ -1,8 +1,8 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import mainPage from "../components/MainPage";
 import easyVersion from "../components/versions/easy_version/EasyVersion";
-import mediumVersion from "../components/versions/MediumVersion";
-import hardVersion from "../components/versions/HardVersion";
+import mediumVersion from "../components/versions/medium_version/MediumVersion";
+import hardVersion from "../components/versions/hard_version/HardVersion";
 
 const routes = [
   {
@@ -27,9 +27,11 @@ const routes = [
   },
 ];
 
-const router = createRouter({
+
+const router = new createRouter({
   history: createWebHashHistory(),
+  mode: 'history',
   routes,
-});
+})
 
 export default router;
